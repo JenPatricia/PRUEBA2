@@ -1,20 +1,26 @@
-#contador de palabras
+# contador de palabras
 
 def leertxt():
     print("")
-    archi=open('textoPython.txt','r')
-    lineas=archi.readline()
-    print(lineas)
+    archi = open('textoPython.txt', 'r')
+    lineasTexto = archi.readline()
+    print(lineasTexto)
+    archi.close()
+    return lineasTexto
+
+
+def contarPalabras():
+    lineas = leertxt()
     palabra = lineas.split()
     miNuevaLista = list(set(palabra))
-    contador=0
+    contador = 0
 
     contPalabrasTotal = 0;
     contPalabra = 0;
 
     print("")
-    for p in range (0,len(palabra)):
-        contador+=1
+    for p in range(0, len(palabra)):
+        contador += 1
 
     # Cuento el numero total de palabras que hay en el texto
     print("El número total de palabras son: ", len(palabra))
@@ -30,8 +36,7 @@ def leertxt():
 
     print("##################### ARREGLO ######################\n")
     print(palabra)
-    print("El total de palabras es: "+str(contador))
-    archi.close()
+    print("El total de palabras es: " + str(contador))
 
-leertxt()
 
+contarPalabras()
